@@ -2,3 +2,4 @@
 FashionMNIST
 MNIST
 model_ckpts
+__pycache__

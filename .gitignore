@@ -1,5 +1,6 @@
 .ipynb_checkpoints
+__pycache__
 FashionMNIST
 MNIST
 model_ckpts
-__pycache__
+

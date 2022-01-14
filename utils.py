@@ -90,3 +90,8 @@ def load_model(model_name, dataset_name, ckpt_dir):
 
     return model
 
+def normalize(data):
+    data -= data.min().item()
+    data /= data.max().item()
+    return data
+

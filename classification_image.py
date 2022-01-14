@@ -7,7 +7,6 @@ from torch.utils.data import DataLoader
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import numpy as np
 
-from models import Alexish5, PaperCNN
 import inspect
 # import matplotlib
 # matplotlib.use('Agg')
@@ -110,6 +109,7 @@ def ClassificationImgMain(ckpt_dir, model_name, dataset_name, num_trials=1000000
     preds = []
     for i in classes:
         noise_map = noise_maps[i].unsqueeze(0).unsqueeze(0).to(device)
+        noise_map = utils.normalize(noise_map)
         output = model(noise_map)
         pred = torch.argmax(output)
         preds.append(pred.cpu().data)
